@@ -17,7 +17,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="c:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1663766143132.png">
 <meta property="article:published_time" content="2022-09-21T13:00:00.000Z">
-<meta property="article:modified_time" content="2022-09-21T13:26:43.249Z">
+<meta property="article:modified_time" content="2022-09-21T14:45:59.134Z">
 <meta property="article:author" content="Huang">
 <meta property="article:tag" content="opencv">
 <meta property="article:tag" content="python">
@@ -192,8 +192,13 @@
 
 
 
-<h2 id="一、图像视频的加载和显示"><a href="#一、图像视频的加载和显示" class="headerlink" title="一、图像视频的加载和显示"></a>一、图像视频的加载和显示</h2><h3 id="1-创建和显示窗口"><a href="#1-创建和显示窗口" class="headerlink" title="1. 创建和显示窗口"></a>1. 创建和显示窗口</h3><p><em><strong>API：</strong></em></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nameWindow(<span class="string">&#x27;name&#x27;</span>,cv2.WINDOW_***) </span><br><span class="line"><span class="comment">#第一个入口参数：窗口的名字</span></span><br><span class="line"><span class="comment">#第二个入口参数：cv2.WINDOW_AUTOSIZE	</span></span><br></pre></td></tr></table></figure>
+<h2 id="一、图像视频的加载和显示"><a href="#一、图像视频的加载和显示" class="headerlink" title="一、图像视频的加载和显示"></a>一、图像视频的加载和显示</h2><h3 id="1-创建和显示窗口"><a href="#1-创建和显示窗口" class="headerlink" title="1. 创建和显示窗口"></a>1. 创建和显示窗口</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">cv2.namedWindow(<span class="string">&#x27;name&#x27;</span>,cv2.WINDOW_***) </span><br><span class="line"><span class="comment">#第一个入口参数：窗口的名字</span></span><br><span class="line"><span class="comment">#第二个入口参数：cv2.WINDOW_NORMAL可以让窗口大小更改	      cv2.WINDOW_AUTOSIZE自动大小</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cv2.imshow(<span class="string">&#x27;name&#x27;</span>,)</span><br><span class="line"><span class="comment">#第一个参数是窗口名字，第二个参数是我们的图像</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cv2.waitKey()</span><br><span class="line"><span class="comment">#返回的是ASCII值，输入0表示接受任意按键，输入数字表示延时时间，ms为单位</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cv2.destoreAllWindow()</span><br><span class="line"><span class="comment">#销毁所有窗口</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-加载保存图片"><a href="#2-加载保存图片" class="headerlink" title="2.加载保存图片"></a>2.加载保存图片</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cv2.imread(<span class="string">&#x27;图片路径&#x27;</span>)</span><br><span class="line"><span class="comment">#获取图片信息</span></span><br><span class="line"><span class="comment">#****注意：opencv读出来的颜色通道是按着BGR（蓝绿红）来的，并不是一般的RGB所以其他方式打开这个图片颜色可能不太对****#</span></span><br><span class="line"></span><br><span class="line">cv2.imwrite(<span class="string">&#x27;file...&#x27;</span>,<span class="string">&#x27;name&#x27;</span>)</span><br><span class="line"><span class="comment">#第一个参数是保存的路径及文件名，第二个参数是保存的图片</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-视频"><a href="#3-视频" class="headerlink" title="3.视频"></a>3.视频</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cv2.VideoCapture(<span class="string">&#x27;视频路径&#x27;</span>)</span><br><span class="line"><span class="comment">#入口参数为0可打开本地摄像头</span></span><br><span class="line"><span class="comment">#返回值记为video，即video =cv2.VideoCapture(0)，有下面这个用法</span></span><br><span class="line">video.read()</span><br><span class="line"><span class="comment">#返回两个值，第一个返回标志，True为采集到，False为采集失败。第二个值为返回的这一帧数据</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
 
 
 
@@ -340,7 +345,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#OPENCV%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">OPENCV学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%9B%BE%E5%83%8F%E8%A7%86%E9%A2%91%E7%9A%84%E5%8A%A0%E8%BD%BD%E5%92%8C%E6%98%BE%E7%A4%BA"><span class="toc-number">1.1.</span> <span class="toc-text">一、图像视频的加载和显示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BA%E5%92%8C%E6%98%BE%E7%A4%BA%E7%AA%97%E5%8F%A3"><span class="toc-number">1.1.1.</span> <span class="toc-text">1. 创建和显示窗口</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">遇到的问题</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#OPENCV%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">OPENCV学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%9B%BE%E5%83%8F%E8%A7%86%E9%A2%91%E7%9A%84%E5%8A%A0%E8%BD%BD%E5%92%8C%E6%98%BE%E7%A4%BA"><span class="toc-number">1.1.</span> <span class="toc-text">一、图像视频的加载和显示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BA%E5%92%8C%E6%98%BE%E7%A4%BA%E7%AA%97%E5%8F%A3"><span class="toc-number">1.1.1.</span> <span class="toc-text">1. 创建和显示窗口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%8A%A0%E8%BD%BD%E4%BF%9D%E5%AD%98%E5%9B%BE%E7%89%87"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.加载保存图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%A7%86%E9%A2%91"><span class="toc-number">1.1.3.</span> <span class="toc-text">3.视频</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">遇到的问题</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -486,11 +491,7 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color5">RTOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -514,22 +515,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">opencv</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器视觉</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">RTOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
@@ -539,6 +524,26 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">tags</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">机器视觉</a>
               </li>
             
             <div class="clearfix"></div>
