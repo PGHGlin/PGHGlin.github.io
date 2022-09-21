@@ -6,22 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://PGHGlin.github.io">
-  <title>FreeRTOS 笔记 | 18🈲你想😍看的都在这❌</title>
+  <title>Tag: opencv | 18🈲你想😍看的都在这❌</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="——————————————">
-<meta property="og:type" content="article">
-<meta property="og:title" content="FreeRTOS 笔记">
-<meta property="og:url" content="http://pghglin.github.io/2022/09/16/FreeRTOS-%E7%AC%94%E8%AE%B0/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="18🈲你想😍看的都在这❌">
+<meta property="og:url" content="http://pghglin.github.io/tags/opencv/index.html">
 <meta property="og:site_name" content="18🈲你想😍看的都在这❌">
-<meta property="og:description" content="——————————————">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://github.com/PGHGlin/My-personal-learning-files/blob/main/Photo/1663122206241.png?raw=true">
-<meta property="article:published_time" content="2022-09-16T03:30:00.000Z">
-<meta property="article:modified_time" content="2022-09-16T03:40:33.804Z">
 <meta property="article:author" content="Huang">
-<meta property="article:tag" content="RTOS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://github.com/PGHGlin/My-personal-learning-files/blob/main/Photo/1663122206241.png?raw=true">
   
     <link rel="alternative" href="/atom.xml" title="18🈲你想😍看的都在这❌" type="application/atom+xml">
   
@@ -159,255 +152,68 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-FreeRTOS-笔记" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      FreeRTOS 笔记
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2022" class="archive-year">2022</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2022/09/21/opencv/" class="archive-article-date">
+  	<time datetime="2022-09-21T13:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-21</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2022/09/21/opencv/">opencv</a>
     </h1>
   
 
-        
-        <a href="/2022/09/16/FreeRTOS-%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2022-09-16T03:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-16</time>
-</a>
-        
-            <!-- 添加代码 -->
-        
-          <span class="archive-article-date">
-            阅读量 <span id="busuanzi_value_page_pv"></span>
-          </span>
-      
-      
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>——————————————</p>
-<span id="more"></span>
-
-<h1 id="FreeRTOS笔记"><a href="#FreeRTOS笔记" class="headerlink" title="FreeRTOS	笔记"></a>FreeRTOS	笔记</h1><h2 id="一、FreeRTOS入门"><a href="#一、FreeRTOS入门" class="headerlink" title="一、FreeRTOS入门"></a>一、FreeRTOS入门</h2><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><ul>
-<li>在FreeRTOS中，int型从不使用，只使用short和long型。在Cortex-M内核的MCU中，short为16位，long为32位。 </li>
-<li>FreeRTOS中详细的数据类型重定义在portmarco.h中实现</li>
-<li>在编程时，如果用户没有明确规定char的符号类型编译器会默认指定有符号或无符号的一种，所以在freertos中，需要明确指明。在keil中，默认char是无符号的，但是也可以配置成为有符号的。具体实现过程如下：<br><img src="https://github.com/PGHGlin/My-personal-learning-files/blob/main/Photo/1663122206241.png?raw=true" alt="1663122206241"></li>
-<li>Free RTOS中，定义变量时常常把变量 的类型当作前缀加在变量上，目的是让用户一看到变量名就知道是什么类型的，比如char会在前面加一个c，unsigned char会加一个前缀uc等等。</li>
-<li>函数名前面通常也会加前缀，私有函数会加prv；根据返回值加，比如vTaskPrioritySet()返回值为void，在task.c中定义。</li>
-</ul>
-<h2 id="二、裸机系统和多任务系统"><a href="#二、裸机系统和多任务系统" class="headerlink" title="二、裸机系统和多任务系统"></a>二、裸机系统和多任务系统</h2><h3 id="1-裸机系统"><a href="#1-裸机系统" class="headerlink" title="1.裸机系统"></a>1.裸机系统</h3><ul>
-<li>裸机系统通常分成轮询系统和前后台系统</li>
-</ul>
-<h4 id="轮询系统"><a href="#轮询系统" class="headerlink" title="轮询系统"></a>轮询系统</h4><ul>
-<li>轮询系统即在裸机编程时，先初始化好相关的硬件，然后让主程序在一个死循环里不断循环，顺序地处理各种事件</li>
-<li>轮询系统通常只适用于仅需要顺序执行代码切不需要外部事件（按键检测等）来驱动就能完成的事件。</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    HardWareInit();<span class="comment">//硬件相关初始化</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*无限循环，和while(1)一样*/</span></span><br><span class="line">    <span class="keyword">for</span>(;;)</span><br><span class="line">    &#123;</span><br><span class="line">        Task1();<span class="comment">//事件一</span></span><br><span class="line">        </span><br><span class="line">        Task2();<span class="comment">//事件二</span></span><br><span class="line">        </span><br><span class="line">        Task3();<span class="comment">//事件三</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>上述为轮询系统的伪代码。举个例子来说明外部事件对上述系统的影响：假如按键检测在Task3中进行，而此时程序运行到Task1且在Task1中需要运行很长时间，以至于松开按键时还没有执行到Task3，那么Task3就会丢失运行一次</li>
-</ul>
-<h4 id="前后台系统"><a href="#前后台系统" class="headerlink" title="前后台系统"></a>前后台系统</h4><ul>
-<li>相比于轮询系统，前后台系统是在轮询的基础上加上了中断。外部事件的响应在中断中进行，事件的处理还是回到轮询系统中进行，中断被称为前台，而无限循环被称为后台。</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> flag1=<span class="number">0</span>;</span><br><span class="line"><span class="type">int</span> flag2=<span class="number">0</span>;</span><br><span class="line"><span class="type">int</span> flag3=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    HardWareInit();<span class="comment">//硬件相关初始化</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(;;)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(flag1)</span><br><span class="line">        &#123;	<span class="comment">/*处理事件1*/</span></span><br><span class="line">            Task1();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(flag2)</span><br><span class="line">        &#123;	<span class="comment">/*处理事件2*/</span></span><br><span class="line">            Task2();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(flag3)</span><br><span class="line">        &#123;	<span class="comment">/*处理事件3*/</span></span><br><span class="line">            Task3();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">ISR1</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">/*标志位置1*/</span></span><br><span class="line">    flag1=<span class="number">1</span>;</span><br><span class="line">    <span class="comment">/*如果事件处理时间较短，则在中断中进行，否则回到循环中进行*/</span></span><br><span class="line">    Task1();</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">ISR2</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">/*标志位置1*/</span></span><br><span class="line">    flag1=<span class="number">1</span>;</span><br><span class="line">    <span class="comment">/*如果事件处理时间较短，则在中断中进行，否则回到循环中进行*/</span></span><br><span class="line">    Task2();</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">ISR3</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">/*标志位置1*/</span></span><br><span class="line">    flag1=<span class="number">1</span>;</span><br><span class="line">    <span class="comment">/*如果事件处理时间较短，则在中断中进行，否则回到循环中进行*/</span></span><br><span class="line">    Task3();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>上述是前后台系统的伪代码。前后台系统确保了事件不会丢失，再加上中断具有可嵌套的功能，大大提高了程序的实时响应能力。而缺点也很明显，在大规模的模块使用中，可能会造成中断执行太长，造成多层的中断嵌套，最终可能导致中断栈空间爆掉。 更重要的是：不是所有的中断都是紧急的重要的，很可能各个要处理的模块优先级要大于不紧急的中断处理。这样造成的后果是不但各个Task间不能相互通讯，而且实时模块完全得不到处理，在一个中大型软件项目中，采用此类方法可以说是一种管理的灾难。</li>
-</ul>
-<h3 id="2-多任务系统"><a href="#2-多任务系统" class="headerlink" title="2.多任务系统"></a>2.多任务系统</h3><ul>
-<li>相比于前后台系统，多任务系统的事件响应也是在中断中进行的，但事件的处理是在任务中进行的。任务与中断一样，也有优先级，优先级高的任务会被优先执行。相比于前后台系统，多任务系统的实时性又被提高了。</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> flag1=<span class="number">0</span>;</span><br><span class="line"><span class="type">int</span> flag2=<span class="number">0</span>;</span><br><span class="line"><span class="type">int</span> flag3=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">     HardWareInit();<span class="comment">//硬件相关初始化</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*RTOS初始化*/</span></span><br><span class="line">    RTOSInit();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*RTOS启动*/</span></span><br><span class="line">    RTOSStart();    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">ISR1</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">/*标志位置1*/</span></span><br><span class="line">    flag1=<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">ISR2</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">/*标志位置1*/</span></span><br><span class="line">    flag2=<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">ISR1</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">/*标志位置1*/</span></span><br><span class="line">    flag2=<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">Task1</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(;;)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(flag1)</span><br><span class="line">        &#123;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">Task2</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(;;)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(flag2)</span><br><span class="line">        &#123;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">Task3</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(;;)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(flag3)</span><br><span class="line">        &#123;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>上述是多任务系统的伪代码。</li>
-</ul>
-<h2 id="三、数据结构——列表与列表项"><a href="#三、数据结构——列表与列表项" class="headerlink" title="三、数据结构——列表与列表项"></a>三、数据结构——列表与列表项</h2><ul>
-<li><p>列表就是所说的链表，列表项就是节点</p>
-</li>
-<li><p>链表最大的作用是通过节点把离散的数据链接起来，组成一个表。为了顺利插入节点，会人为规定一个根节点root_node。</p>
-</li>
-<li><p>链表和数组的区别，链表是通过节点将离散的数据链接成一个表，可以通过节点的删除和插入来实现对数据的 存取，链表是一个圈，没有头尾之分，为了方便才人为规定的根节点；而数组是通过开辟一个连续的内存来存放数据，数组有起始和结束地址。</p>
-<p><del>实在不会放弃了，等之后看看视频学习一下</del></p>
-</li>
-</ul>
-<h2 id="四、任务的定义与任务切换"><a href="#四、任务的定义与任务切换" class="headerlink" title="四、任务的定义与任务切换"></a>四、任务的定义与任务切换</h2><ol>
-<li><p>什么是任务</p>
-<ul>
-<li>在裸机系统中，系统的主体是main函数中执行的无限循环；在多任务系统中，根据功能的不同，把整个系统分成一个个独立的且无法返回的函数，这样的函数就被称为任务</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">task</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>( ; ; )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">/*任务主体代码*/</span></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>上述便是任务的伪代码</li>
-</ul>
-</li>
-<li><p>创建任务</p>
-<ul>
-<li><p>在裸机系统中，全局变量在子函数调用、中断发生时，局部变量在子函数调用时，中断发生时回调函数返回值的地址这些统统会放在栈中。</p>
-</li>
-<li><p>栈是单片机RAM中的一段连续的内存空间</p>
-</li>
-<li><p>多任务系统中，每个任务都是独立互不干扰的，所以需要给他们分配单独的栈空间，这个栈空间通常是一个预先定义好的全局数组，也可以是动态分配的一段内存空间，它们都存在于RAM中。</p>
-</li>
-<li><p>Free RTOS推荐的最小的任务栈是128字，即512字节</p>
-</li>
-<li><p>有多少任务就需要定义多少个栈空间</p>
-</li>
-<li><p>任务控制块（TCB:TaskControlBlock）.相当于任务的身份证，有关任务的信息都会在里面被定义</p>
-</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">tskTaskControlBlock</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">volatile</span> StackType_t *pxTopOfStack;      <span class="comment">/*栈顶*/</span></span><br><span class="line">    ListItem_t xStateListItem; 				 <span class="comment">/*任务节点*/</span></span><br><span class="line">    StackType_t *pxStack;					 <span class="comment">/*任务栈起始地址*/</span></span><br><span class="line">    <span class="type">char</span> pcTaskName[configMAX_TASK_NAME_LEN];<span class="comment">/*任务名称*/</span></span><br><span class="line">&#125;tskTCB;</span><br><span class="line"><span class="keyword">typedef</span> tskTCB TCB_t</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>任务控制块类型声明</li>
-</ul>
-</li>
-</ol>
-<p><strong>——————————————          		       持续更新······             		——————————————</strong></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">RTOS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">opencv</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器视觉</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://pghglin.github.io/2022/09/16/FreeRTOS-%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2022/09/21/opencv/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          opencv
-        
-      </div>
-    </a>
   
   
-    <a href="/2022/09/16/Git/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">GIT使用</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#FreeRTOS%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">FreeRTOS	笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81FreeRTOS%E5%85%A5%E9%97%A8"><span class="toc-number">1.1.</span> <span class="toc-text">一、FreeRTOS入门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.1.</span> <span class="toc-text">数据类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%A3%B8%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%A4%9A%E4%BB%BB%E5%8A%A1%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.2.</span> <span class="toc-text">二、裸机系统和多任务系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%A3%B8%E6%9C%BA%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.裸机系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AE%E8%AF%A2%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">轮询系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">前后台系统</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.多任务系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94%E5%88%97%E8%A1%A8%E4%B8%8E%E5%88%97%E8%A1%A8%E9%A1%B9"><span class="toc-number">1.3.</span> <span class="toc-text">三、数据结构——列表与列表项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E4%BB%BB%E5%8A%A1%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E4%BB%BB%E5%8A%A1%E5%88%87%E6%8D%A2"><span class="toc-number">1.4.</span> <span class="toc-text">四、任务的定义与任务切换</span></a></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -439,9 +245,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
