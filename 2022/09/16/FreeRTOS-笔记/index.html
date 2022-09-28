@@ -15,13 +15,13 @@
 <meta property="og:site_name" content="18🈲你想😍看的都在这❌">
 <meta property="og:description" content="——————————————">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://github.com/PGHGlin/My-personal-learning-files/blob/main/Photo/1663122206241.png?raw=true">
+<meta property="og:image" content="http://pghglin.github.io/2022/09/16/FreeRTOS-%E7%AC%94%E8%AE%B0/1663122206241.png">
 <meta property="article:published_time" content="2022-09-16T03:30:00.000Z">
-<meta property="article:modified_time" content="2022-09-16T03:40:33.804Z">
+<meta property="article:modified_time" content="2022-09-28T03:37:40.918Z">
 <meta property="article:author" content="Huang">
 <meta property="article:tag" content="RTOS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://github.com/PGHGlin/My-personal-learning-files/blob/main/Photo/1663122206241.png?raw=true">
+<meta name="twitter:image" content="http://pghglin.github.io/2022/09/16/FreeRTOS-%E7%AC%94%E8%AE%B0/1663122206241.png">
   
     <link rel="alternative" href="/atom.xml" title="18🈲你想😍看的都在这❌" type="application/atom+xml">
   
@@ -67,7 +67,7 @@
 			</ul>
 		</nav>
 		<nav>
-			总文章数 8
+			总文章数 7
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -192,7 +192,7 @@
 <h1 id="FreeRTOS笔记"><a href="#FreeRTOS笔记" class="headerlink" title="FreeRTOS	笔记"></a>FreeRTOS	笔记</h1><h2 id="一、FreeRTOS入门"><a href="#一、FreeRTOS入门" class="headerlink" title="一、FreeRTOS入门"></a>一、FreeRTOS入门</h2><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><ul>
 <li>在FreeRTOS中，int型从不使用，只使用short和long型。在Cortex-M内核的MCU中，short为16位，long为32位。 </li>
 <li>FreeRTOS中详细的数据类型重定义在portmarco.h中实现</li>
-<li>在编程时，如果用户没有明确规定char的符号类型编译器会默认指定有符号或无符号的一种，所以在freertos中，需要明确指明。在keil中，默认char是无符号的，但是也可以配置成为有符号的。具体实现过程如下：<br><img src="https://github.com/PGHGlin/My-personal-learning-files/blob/main/Photo/1663122206241.png?raw=true" alt="1663122206241"></li>
+<li>在编程时，如果用户没有明确规定char的符号类型编译器会默认指定有符号或无符号的一种，所以在freertos中，需要明确指明。在keil中，默认char是无符号的，但是也可以配置成为有符号的。具体实现过程如下：<br><img src="/2022/09/16/FreeRTOS-%E7%AC%94%E8%AE%B0/1663122206241.png" alt="1663122206241"></li>
 <li>Free RTOS中，定义变量时常常把变量 的类型当作前缀加在变量上，目的是让用户一看到变量名就知道是什么类型的，比如char会在前面加一个c，unsigned char会加一个前缀uc等等。</li>
 <li>函数名前面通常也会加前缀，私有函数会加prv；根据返回值加，比如vTaskPrioritySet()返回值为void，在task.c中定义。</li>
 </ul>
@@ -554,6 +554,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">RTOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Clion</a>
               </li>
              
@@ -563,10 +567,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">单片机</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">RTOS</a>
               </li>
              
               <li class="article-tag-list-item">

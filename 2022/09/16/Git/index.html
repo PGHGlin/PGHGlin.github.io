@@ -15,20 +15,20 @@
 <meta property="og:site_name" content="18🈲你想😍看的都在这❌">
 <meta property="og:description" content="Git使用">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://github.com/PGHGlin/My-personal-learning-files/blob/main/Photo/1663431152547.png?raw=true">
-<meta property="og:image" content="https://github.com/PGHGlin/My-personal-learning-files/blob/main/Photo/1663431239620.png?raw=true">
-<meta property="og:image" content="https://github.com/PGHGlin/My-personal-learning-files/blob/main/Photo/1663426276884.png?raw=true">
-<meta property="og:image" content="https://github.com/PGHGlin/My-personal-learning-files/blob/main/Photo/1663468911457.png?raw=true">
-<meta property="og:image" content="https://github.com/PGHGlin/My-personal-learning-files/blob/main/Photo/1663470142397.png?raw=true">
-<meta property="og:image" content="https://github.com/PGHGlin/My-personal-learning-files/blob/main/Photo/1663471012964.png?raw=true">
-<meta property="og:image" content="https://github.com/PGHGlin/My-personal-learning-files/blob/main/Photo/1663471258363.png?raw=true">
+<meta property="og:image" content="http://pghglin.github.io/2022/09/16/Git/1663431152547.png">
+<meta property="og:image" content="http://pghglin.github.io/2022/09/16/Git/1663431239620.png">
+<meta property="og:image" content="http://pghglin.github.io/2022/09/16/Git/1663426276884.png">
+<meta property="og:image" content="http://pghglin.github.io/2022/09/16/Git/1663468911457.png">
+<meta property="og:image" content="http://pghglin.github.io/2022/09/16/Git/1663470142397.png">
+<meta property="og:image" content="http://pghglin.github.io/2022/09/16/Git/1663471012964.png">
+<meta property="og:image" content="http://pghglin.github.io/2022/09/16/Git/1663471258363.png">
 <meta property="article:published_time" content="2022-09-16T02:00:00.000Z">
-<meta property="article:modified_time" content="2022-09-18T03:47:24.282Z">
+<meta property="article:modified_time" content="2022-09-28T03:40:17.411Z">
 <meta property="article:author" content="Huang">
 <meta property="article:tag" content="git">
 <meta property="article:tag" content="github">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://github.com/PGHGlin/My-personal-learning-files/blob/main/Photo/1663431152547.png?raw=true">
+<meta name="twitter:image" content="http://pghglin.github.io/2022/09/16/Git/1663431152547.png">
   
     <link rel="alternative" href="/atom.xml" title="18🈲你想😍看的都在这❌" type="application/atom+xml">
   
@@ -74,7 +74,7 @@
 			</ul>
 		</nav>
 		<nav>
-			总文章数 8
+			总文章数 7
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -225,8 +225,8 @@
 <p><code>git config --global user.name &quot;你的用户名&quot;</code><br><code>git config --global user.email &quot;你的邮箱&quot;</code></p>
 </li>
 <li><p><strong>生成ssh key</strong>， 运行 <code>ssh-keygen -t rsa -C &quot;你的邮箱&quot;</code> ，它会有三次等待你输入，直接回车即可。 然后去<code>C:\Users\Administrator\.ssh</code>目录下寻找公钥，以pub结尾那个，把它全选复制，进入github设置界面</p>
-<p><img src="https://github.com/PGHGlin/My-personal-learning-files/blob/main/Photo/1663431152547.png?raw=true" alt="1663431152547"></p>
-<p><img src="https://github.com/PGHGlin/My-personal-learning-files/blob/main/Photo/1663431239620.png?raw=true" alt="1663431239620"></p>
+<p><img src="/2022/09/16/Git/1663431152547.png" alt="1663431152547"></p>
+<p><img src="/2022/09/16/Git/1663431239620.png" alt="1663431239620"></p>
 <p>这样就好了，测试一下，返回git，输入 <code>ssh -T git@github.com </code>即可看到相关提示，证明已经成功。</p>
 </li>
 <li><p>将<strong>远程仓库和本地仓库关联起来</strong>，有两种方式可以关联，一种是SSH，一种是HTTPS。由于<strong>HTTPS比较慢</strong>，所以推荐使用SSH。注意SSH的地址格式是这样开头的： <code>git@github.com</code>，运行 <code>git remote add origin 你复制的地址</code> ：</p>
@@ -242,25 +242,25 @@
 <h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><ol>
 <li><p>github把master默认分支改为了main, 为了适应它这种政治正确的变化, 我们也要做相应调整, 把本地git的master改成main。注意，需要2.28以上版本的git。</p>
 <p>windows中git的配置文件在<code>C:\Users\Administrator</code>下 </p>
-<p><img src="https://github.com/PGHGlin/My-personal-learning-files/blob/main/Photo/1663426276884.png?raw=true" alt="1663426276884"></p>
+<p><img src="/2022/09/16/Git/1663426276884.png" alt="1663426276884"></p>
 <p>添加下面这句话，就好了。</p>
 <p>或者直接用git命令：<code> git config --global init.defaultBranch main</code></p>
 <p><strong>修改已创建的文件</strong> 使用<code>git branch -M main</code>命令, 把当前master分支改名为main, 其中<code>-M</code>的意思是移动或者重命名当前分支 </p>
 </li>
 <li><p><code>git pull origin main</code>时可能会报如下的错</p>
-<p><img src="https://github.com/PGHGlin/My-personal-learning-files/blob/main/Photo/1663468911457.png?raw=true" alt="1663468911457"></p>
+<p><img src="/2022/09/16/Git/1663468911457.png" alt="1663468911457"></p>
 <p>这时在命令后面加上<code>--allow-unrelated-histories</code>即可</p>
 </li>
 <li><p>这次是我手欠了，想试一下回退是什么样的，执行完回退后，我在push出现这样的报错了</p>
-<p><img src="https://github.com/PGHGlin/My-personal-learning-files/blob/main/Photo/1663470142397.png?raw=true" alt="1663470142397"></p>
+<p><img src="/2022/09/16/Git/1663470142397.png" alt="1663470142397"></p>
 <p>解决办法： <code>git pull origin master</code> 再<code>git push origin master</code> 即可，这个错就是远程仓库和本地仓库不一样造成的</p>
 </li>
-<li><p><img src="https://github.com/PGHGlin/My-personal-learning-files/blob/main/Photo/1663471012964.png?raw=true" alt="1663471012964"></p>
+<li><p><img src="/2022/09/16/Git/1663471012964.png" alt="1663471012964"></p>
 <p><code>git pull</code>出现这样的报错 </p>
 <p>解决办法：如果你想完全地覆盖本地的代码，只保留服务器端代码，则直接回退到上一个版本，再进行pull：</p>
 <p><code>git reset --hard git pull origin master</code></p>
 </li>
-<li><p><img src="https://github.com/PGHGlin/My-personal-learning-files/blob/main/Photo/1663471258363.png?raw=true" alt="1663471258363"></p>
+<li><p><img src="/2022/09/16/Git/1663471258363.png" alt="1663471258363"></p>
 <p>解决办法： </p>
 <p><code>git config --global http.proxy</code><br><code>git config --global https.proxy</code></p>
 </li>
@@ -557,6 +557,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">RTOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Clion</a>
               </li>
              
@@ -566,10 +570,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">单片机</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">RTOS</a>
               </li>
              
               <li class="article-tag-list-item">
