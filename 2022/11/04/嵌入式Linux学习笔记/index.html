@@ -26,7 +26,7 @@
 <meta property="og:image" content="http://pghglin.github.io/2022/11/04/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1667575663237.png">
 <meta property="og:image" content="http://pghglin.github.io/2022/11/04/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/1667575732831.png">
 <meta property="article:published_time" content="2022-11-04T15:47:55.000Z">
-<meta property="article:modified_time" content="2022-11-06T15:14:10.806Z">
+<meta property="article:modified_time" content="2022-11-10T05:45:18.162Z">
 <meta property="article:author" content="Huang">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
@@ -306,6 +306,77 @@
 <p> 输入命令：cd 目录名字（有一个空格）</p>
 </li>
 <li><p>pwd命令（查看当前路径）</p>
+</li>
+<li><p>mkdir命令（创建一个新的文件夹）</p>
+<p> 使用-p命令可以创建多级目录</p>
+</li>
+<li><p>rmdir命令（删除一个空的目录）</p>
+</li>
+<li><p>rm命令（删除命令）</p>
+<ol>
+<li>-r	递归删除，即删除所有子目录</li>
+<li>-f    强制删除</li>
+<li>-i      删除前询问是否要删除</li>
+</ol>
+</li>
+<li><p>touch命令（可以创建一个文件）</p>
+</li>
+<li><p>clear命令（刷新终端页面）</p>
+<p> 但是会保留历史记录，即原先输入过的命令依然存在，这是相当于翻了一页</p>
+</li>
+<li><p>reset命令（刷新终端页面）</p>
+<p> 直接删除原先输入的命令重新开始一页。</p>
+</li>
+<li><p>cp命令（复制）</p>
+<p>命令格式 ：cp 源文件 目标文件</p>
+<p>使用-r参数可以递归复制所有子目录</p>
+</li>
+<li><p>mv命令（修改文件名，修改目录的命令，移动文件）</p>
+<p>  命令格式 ：mv 源文件名 目标文件名</p>
+<p>  命令格式 ：mv 想移动的文件的路径 目标文件路径</p>
+<p>  移动多个文件可以使用通配符“ * ”，“ * ”代表任意，可以用来表示前缀一样的文件后面加一个*来代替</p>
+</li>
+<li><p>tar命令（压缩和解压文件）</p>
+<p>  功能：对多个文件和目录进行打包</p>
+<p>  命令格式：tar [参数] 压缩文件名 要压缩的目录或文件名</p>
+<p>  常用参数：</p>
+<ol>
+<li><p>-c ：创建一个新的打包文件</p>
+</li>
+<li><p>-x：对打包文件进行解压缩</p>
+</li>
+<li><p>-z：以gzip的格式进行压缩或者解压，与-c结合为压缩，与-x结合为解压</p>
+<p>后缀为tar.gz</p>
+</li>
+<li><p>-j：以bzip2的格式进行解压或压缩，与-c结合为压缩，与-x结合为解压</p>
+<p>后缀为tar.bz2</p>
+</li>
+<li><p>-f：表示要操作的文件，一般放在所有参数的最后</p>
+</li>
+<li><p>-v：显示正在处理的文件</p>
+</li>
+<li><p>-C：格式：-C 路径，表示将文件压缩或者解压到指定的路径</p>
+</li>
+</ol>
+</li>
+<li><p>ifconfig命令（查看和配置网络状态）一般是需要sudo权限的</p>
+<p> 设置IP地址：格式：ifconfig 网卡名称 IP</p>
+<p> 关闭网卡：格式：ifconfig 网卡名称 down</p>
+<p> 打开网卡：格式：ifconfig 网卡名称 up</p>
+</li>
+<li><p>cat命令（查看文本内容）</p>
+<p> 命令格式：cat 文件</p>
+<p> 可在中间加入参数： -b 显示行号</p>
+</li>
+<li><p>reboot命令（重启Ubuntu）</p>
+</li>
+<li><p>poweroff命令（关机）</p>
+</li>
+<li><p>ping命令（测试本机和目标机器的网络是否联通，速度如何，稳定性如何）</p>
+<p>命令格式：ping IP地址</p>
+<p>参数：</p>
+<p>​	-c times：ping指定次数后停止，参数加在命令的末尾</p>
+<p>目标机器可以是IP也可是域名，如果是域名，要保证 dns是正确的</p>
 </li>
 </ol>
 </li>
@@ -619,14 +690,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CAD</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">RTOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Clion</a>
               </li>
              
@@ -636,14 +699,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">单片机</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -663,6 +718,18 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CAD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">opencv</a>
               </li>
              
@@ -672,14 +739,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机器视觉</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">PR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">视频剪辑</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -695,7 +754,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">RTOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">PR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">视频剪辑</a>
               </li>
              
               <li class="article-tag-list-item">
