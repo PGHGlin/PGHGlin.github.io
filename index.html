@@ -181,129 +181,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Matlab学习笔记"><a href="#Matlab学习笔记" class="headerlink" title="Matlab学习笔记"></a>Matlab学习笔记</h1><h2 id="一、Matlab的变量"><a href="#一、Matlab的变量" class="headerlink" title="一、Matlab的变量"></a>一、Matlab的变量</h2><h3 id="1-特殊常量"><a href="#1-特殊常量" class="headerlink" title="1.特殊常量"></a>1.特殊常量</h3><table>
-<thead>
-<tr>
-<th>含义</th>
-<th>符号</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>圆周率</td>
-<td>pi</td>
-</tr>
-<tr>
-<td>机器的浮点运算误差限</td>
-<td>eps</td>
-</tr>
-<tr>
-<td>虚数单位</td>
-<td>i或j</td>
-</tr>
-<tr>
-<td>无穷大量</td>
-<td>inf</td>
-</tr>
-<tr>
-<td>非数</td>
-<td>NaN</td>
-</tr>
-<tr>
-<td>默认结果储存变量（临时变量）</td>
-<td>ans</td>
-</tr>
-</tbody></table>
-<h3 id="2-变量的命名规则"><a href="#2-变量的命名规则" class="headerlink" title="2.变量的命名规则"></a>2.变量的命名规则</h3><p><strong>首先</strong>，所有的变量都表示一个矩阵或一个向量。</p>
-<p><strong>其次</strong>，需要注意和其他编程语言不同的是变量名开头必须是英文字母，变量名不能超过31个字符。</p>
-<p>变量不需要先定义后使用，和python一样。</p>
-<p>数值变量的类型会自动定义为双精度变量。</p>
-<h3 id="3-变量显示"><a href="#3-变量显示" class="headerlink" title="3.变量显示"></a>3.变量显示</h3><p><img src="/2022/12/21/Matlab%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/1671439636335.png" alt="1671439636335"></p>
-<p>直接输出情况下，会显示出变量名称，加上disp(display)命令后将不再显示变量名称，只显示数据。</p>
-<blockquote>
-<p>需要注意的是，Matlab中语句可加分号可不加，不加分号将直接显示计算结果，加上分号则不显示计算结果。</p>
-</blockquote>
-<h3 id="4-变量存储和载入"><a href="#4-变量存储和载入" class="headerlink" title="4.变量存储和载入"></a>4.变量存储和载入</h3><p><strong>save</strong>实现从内存到硬盘的存储</p>
-<p><strong>load</strong>实现从硬盘到内存的载入</p>
-<blockquote>
-<p>格式：load 文件名 变量名</p>
-<p>​			save 文件名 变量名</p>
-<p>或者：S&#x3D;load(‘文件名’,’格式’,’变量名’)</p>
-<p>​				save(‘文件名’,’格式’,’变量名’)</p>
-</blockquote>
-<h3 id="5-变量清除"><a href="#5-变量清除" class="headerlink" title="5.变量清除"></a>5.变量清除</h3><p>使用<strong>clear</strong>命令</p>
-<p>格式：clear 变量名1 变量名2；</p>
-<p>​			clear all；</p>
-<p><em><strong>注意：</strong></em>clear是从内存中删除数据，而delete是从硬盘中删除数据。内存硬盘可以简单理解为内存是matlab软件上的临时空间，硬盘就是自己电脑上的存储空间了。</p>
-<h3 id="6-变量检查"><a href="#6-变量检查" class="headerlink" title="6.变量检查"></a>6.变量检查</h3><p><img src="/2022/12/21/Matlab%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/1671440454059.png" alt="1671440454059"></p>
-<p>可以使用who命令和whos命令。可以看到who命令展示内存中现在有的变量，而whos展示的是现在变量的详细信息。</p>
-<h2 id="二、一维数组的创建与元素提取"><a href="#二、一维数组的创建与元素提取" class="headerlink" title="二、一维数组的创建与元素提取"></a>二、一维数组的创建与元素提取</h2><h3 id="1-一维数组（向量）的创建"><a href="#1-一维数组（向量）的创建" class="headerlink" title="1.一维数组（向量）的创建"></a>1.一维数组（向量）的创建</h3><ol>
-<li><p>直接输入法：从键盘上直接输入元素，列与列之间用空格或逗号隔开，行与行之间用分号隔开</p>
-</li>
-<li><p>冒号生成法：用于产生递增或递减的等差数列</p>
-<p>格式：初值:步长:末值</p>
-<p><strong>说明</strong>：当步长为1时可默认不写</p>
-</li>
-<li><p>定数线性采样法：用于产生起止于两点之间的n个数据点</p>
-<p>格式：x &#x3D; linspace(a,b,n)</p>
-<p><strong>说明</strong>：a为起始点，b为终止点，n为起始终止点之间要产生的数据点的个数。n如果不写默认值为100</p>
-</li>
-<li><p>拼接法：利用已有的一维数组可以创建新的一维数组，可以将两个行向量或列向量拼接为一个新的行向量或列向量，也可以用冒号来将已有数组的部分提前出来形成一个新的数组</p>
-<p><strong>用法</strong>：1.行向量拼接：[l1,l2]	2.列向量拼接：[l1;l2]	3.向量抽取：l_new &#x3D; l(a:n:b)  </p>
-<p><strong>说明</strong>：在使用向量抽取时，a为起始位置（1为起始），n为步长（1为相邻），b为结束位置</p>
-</li>
-</ol>
-<h3 id="2-一维数组（向量）的提取"><a href="#2-一维数组（向量）的提取" class="headerlink" title="2.一维数组（向量）的提取"></a>2.一维数组（向量）的提取</h3><p>比较简单，就a&#x3D;A(所在位置)即可</p>
-<h2 id="三、二维数组的创建与元素提取"><a href="#三、二维数组的创建与元素提取" class="headerlink" title="三、二维数组的创建与元素提取"></a>三、二维数组的创建与元素提取</h2><h3 id="1-二维数组（矩阵）的创建"><a href="#1-二维数组（矩阵）的创建" class="headerlink" title="1.二维数组（矩阵）的创建"></a>1.二维数组（矩阵）的创建</h3><ol>
-<li><p>直接输入法：</p>
-<p><strong>输入规则</strong>：1. 矩阵元素必须在方括号内2. 同行之间元素用逗号或空格隔开3. 行与行之间用分号或回车符号隔开 4. 矩阵的维数不必预先定义</p>
-</li>
-<li><p>利用函数创建特殊矩阵：</p>
-<p>​	</p>
-<table>
-<thead>
-<tr>
-<th>含义</th>
-<th>函数</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>全1矩阵</td>
-<td>ones()</td>
-</tr>
-<tr>
-<td>全0矩阵</td>
-<td>zeros()</td>
-</tr>
-<tr>
-<td>(0,1)区间均匀分布的随机矩阵</td>
-<td>rand()</td>
-</tr>
-<tr>
-<td>单位矩阵</td>
-<td>eye()</td>
-</tr>
-<tr>
-<td>均值为0，方差为1的标准正态随机分布矩阵</td>
-<td>randn()</td>
-</tr>
-</tbody></table>
-</li>
-</ol>
-<h3 id="2-二维数组（矩阵）元素的提取"><a href="#2-二维数组（矩阵）元素的提取" class="headerlink" title="2.二维数组（矩阵）元素的提取"></a>2.二维数组（矩阵）元素的提取</h3><ol>
-<li>元素的提取：使用圆括号提取：A(i,j)</li>
-<li>子矩阵的提取：利用冒号和表达式获取：A(: , j)    A(i , :)    A(i:i+m , :)    A(i:i+m , k:k+n)</li>
-</ol>
-<h2 id="四、字符数组和空数组"><a href="#四、字符数组和空数组" class="headerlink" title="四、字符数组和空数组"></a>四、字符数组和空数组</h2><h3 id="1-字符数组"><a href="#1-字符数组" class="headerlink" title="1.字符数组"></a>1.字符数组</h3><ol>
-<li>字符数组的创建：必须使用单引号</li>
-<li>字符数组的拼接：使用方括号和逗号拼接  </li>
-<li>同样可以使用disp的命令来显示字符而不显示变量名</li>
-</ol>
-<h3 id="2-空数组"><a href="#2-空数组" class="headerlink" title="2.空数组"></a>2.空数组</h3><ol>
-<li>空数组的创建：a[]方括号里面什么都不用加</li>
-<li>注意区分空数组和全零数组</li>
-<li>可以使用命令isempty()来判断是否为空数组</li>
-</ol>
-
+        <h1 id="Matlab学习笔记"><a href="#Matlab学习笔记" class="headerlink" title="Matlab学习笔记"></a>Matlab学习笔记</h1>
+        
       
 
       
@@ -1220,15 +1099,7 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Clion</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">STM32</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">单片机</a>
+                <a href="javascript:void(0)" class="js-tag color4">CAD</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1248,11 +1119,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CAD</a>
+                <a href="javascript:void(0)" class="js-tag color5">RTOS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">RTOS</a>
+                <a href="javascript:void(0)" class="js-tag color1">Clion</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">STM32</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">单片机</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1268,14 +1147,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">PR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">视频剪辑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">opencv</a>
               </li>
              
@@ -1285,6 +1156,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机器视觉</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">PR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">视频剪辑</a>
               </li>
              
               <li class="article-tag-list-item">
