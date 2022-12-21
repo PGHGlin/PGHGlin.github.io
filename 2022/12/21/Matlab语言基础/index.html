@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://PGHGlin.github.io">
-  <title>Tag: github | Guanlin的博客</title>
+  <title>Matlab语言基础 | Guanlin的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Guanlin的博客">
-<meta property="og:url" content="http://pghglin.github.io/tags/github/index.html">
+  <meta name="description" content="Matlab学习笔记一、Matlab的变量1.特殊常量   含义 符号    圆周率 pi   机器的浮点运算误差限 eps   虚数单位 i或j   无穷大量 inf   非数 NaN   默认结果储存变量（临时变量） ans   2.变量的命名规则首先，所有的变量都表示一个矩阵或一个向量。 其次，需要注意和其他编程语言不同的是变量名开头必须是英文字母，变量名不能超过31个字符。 变量不需要先定">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Matlab语言基础">
+<meta property="og:url" content="http://pghglin.github.io/2022/12/21/Matlab%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Guanlin的博客">
+<meta property="og:description" content="Matlab学习笔记一、Matlab的变量1.特殊常量   含义 符号    圆周率 pi   机器的浮点运算误差限 eps   虚数单位 i或j   无穷大量 inf   非数 NaN   默认结果储存变量（临时变量） ans   2.变量的命名规则首先，所有的变量都表示一个矩阵或一个向量。 其次，需要注意和其他编程语言不同的是变量名开头必须是英文字母，变量名不能超过31个字符。 变量不需要先定">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://pghglin.github.io/2022/12/21/Matlab%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/1671439636335.png">
+<meta property="og:image" content="http://pghglin.github.io/2022/12/21/Matlab%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/1671440454059.png">
+<meta property="article:published_time" content="2022-12-21T13:03:39.000Z">
+<meta property="article:modified_time" content="2022-12-21T13:06:15.245Z">
 <meta property="article:author" content="Huang">
+<meta property="article:tag" content="Matlab">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://pghglin.github.io/2022/12/21/Matlab%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/1671439636335.png">
   
     <link rel="alternative" href="/atom.xml" title="Guanlin的博客" type="application/atom+xml">
   
@@ -156,64 +164,287 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="n-Matlab语言基础" class="article article-type-n " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/16/Git/" class="archive-article-date">
-  	<time datetime="2022-09-16T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-16</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/16/Git/">GIT使用</a>
+    <h1 class="article-title" itemprop="name">
+      Matlab语言基础
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2022/12/21/Matlab%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" class="archive-article-date">
+  	<time datetime="2022-12-21T13:03:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-21</time>
+</a>
+        
+            <!-- 添加代码 -->
+        
+          <span class="archive-article-date">
+            阅读量 <span id="busuanzi_value_page_pv"></span>
+          </span>
+      
+      
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Matlab学习笔记"><a href="#Matlab学习笔记" class="headerlink" title="Matlab学习笔记"></a>Matlab学习笔记</h1><h2 id="一、Matlab的变量"><a href="#一、Matlab的变量" class="headerlink" title="一、Matlab的变量"></a>一、Matlab的变量</h2><h3 id="1-特殊常量"><a href="#1-特殊常量" class="headerlink" title="1.特殊常量"></a>1.特殊常量</h3><table>
+<thead>
+<tr>
+<th>含义</th>
+<th>符号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>圆周率</td>
+<td>pi</td>
+</tr>
+<tr>
+<td>机器的浮点运算误差限</td>
+<td>eps</td>
+</tr>
+<tr>
+<td>虚数单位</td>
+<td>i或j</td>
+</tr>
+<tr>
+<td>无穷大量</td>
+<td>inf</td>
+</tr>
+<tr>
+<td>非数</td>
+<td>NaN</td>
+</tr>
+<tr>
+<td>默认结果储存变量（临时变量）</td>
+<td>ans</td>
+</tr>
+</tbody></table>
+<h3 id="2-变量的命名规则"><a href="#2-变量的命名规则" class="headerlink" title="2.变量的命名规则"></a>2.变量的命名规则</h3><p><strong>首先</strong>，所有的变量都表示一个矩阵或一个向量。</p>
+<p><strong>其次</strong>，需要注意和其他编程语言不同的是变量名开头必须是英文字母，变量名不能超过31个字符。</p>
+<p>变量不需要先定义后使用，和python一样。</p>
+<p>数值变量的类型会自动定义为双精度变量。</p>
+<h3 id="3-变量显示"><a href="#3-变量显示" class="headerlink" title="3.变量显示"></a>3.变量显示</h3><p><img src="/2022/12/21/Matlab%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/1671439636335.png" alt="1671439636335"></p>
+<p>直接输出情况下，会显示出变量名称，加上disp(display)命令后将不再显示变量名称，只显示数据。</p>
+<blockquote>
+<p>需要注意的是，Matlab中语句可加分号可不加，不加分号将直接显示计算结果，加上分号则不显示计算结果。</p>
+</blockquote>
+<h3 id="4-变量存储和载入"><a href="#4-变量存储和载入" class="headerlink" title="4.变量存储和载入"></a>4.变量存储和载入</h3><p><strong>save</strong>实现从内存到硬盘的存储</p>
+<p><strong>load</strong>实现从硬盘到内存的载入</p>
+<blockquote>
+<p>格式：load 文件名 变量名</p>
+<p>​			save 文件名 变量名</p>
+<p>或者：S&#x3D;load(‘文件名’,’格式’,’变量名’)</p>
+<p>​				save(‘文件名’,’格式’,’变量名’)</p>
+</blockquote>
+<h3 id="5-变量清除"><a href="#5-变量清除" class="headerlink" title="5.变量清除"></a>5.变量清除</h3><p>使用<strong>clear</strong>命令</p>
+<p>格式：clear 变量名1 变量名2；</p>
+<p>​			clear all；</p>
+<p><em><strong>注意：</strong></em>clear是从内存中删除数据，而delete是从硬盘中删除数据。内存硬盘可以简单理解为内存是matlab软件上的临时空间，硬盘就是自己电脑上的存储空间了。</p>
+<h3 id="6-变量检查"><a href="#6-变量检查" class="headerlink" title="6.变量检查"></a>6.变量检查</h3><p><img src="/2022/12/21/Matlab%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/1671440454059.png" alt="1671440454059"></p>
+<p>可以使用who命令和whos命令。可以看到who命令展示内存中现在有的变量，而whos展示的是现在变量的详细信息。</p>
+<h2 id="二、一维数组的创建与元素提取"><a href="#二、一维数组的创建与元素提取" class="headerlink" title="二、一维数组的创建与元素提取"></a>二、一维数组的创建与元素提取</h2><h3 id="1-一维数组（向量）的创建"><a href="#1-一维数组（向量）的创建" class="headerlink" title="1.一维数组（向量）的创建"></a>1.一维数组（向量）的创建</h3><ol>
+<li><p>直接输入法：从键盘上直接输入元素，列与列之间用空格或逗号隔开，行与行之间用分号隔开</p>
+</li>
+<li><p>冒号生成法：用于产生递增或递减的等差数列</p>
+<p>格式：初值:步长:末值</p>
+<p><strong>说明</strong>：当步长为1时可默认不写</p>
+</li>
+<li><p>定数线性采样法：用于产生起止于两点之间的n个数据点</p>
+<p>格式：x &#x3D; linspace(a,b,n)</p>
+<p><strong>说明</strong>：a为起始点，b为终止点，n为起始终止点之间要产生的数据点的个数。n如果不写默认值为100</p>
+</li>
+<li><p>拼接法：利用已有的一维数组可以创建新的一维数组，可以将两个行向量或列向量拼接为一个新的行向量或列向量，也可以用冒号来将已有数组的部分提前出来形成一个新的数组</p>
+<p><strong>用法</strong>：1.行向量拼接：[l1,l2]	2.列向量拼接：[l1;l2]	3.向量抽取：l_new &#x3D; l(a:n:b)  </p>
+<p><strong>说明</strong>：在使用向量抽取时，a为起始位置（1为起始），n为步长（1为相邻），b为结束位置</p>
+</li>
+</ol>
+<h3 id="2-一维数组（向量）的提取"><a href="#2-一维数组（向量）的提取" class="headerlink" title="2.一维数组（向量）的提取"></a>2.一维数组（向量）的提取</h3><p>比较简单，就a&#x3D;A(所在位置)即可</p>
+<h2 id="三、二维数组的创建与元素提取"><a href="#三、二维数组的创建与元素提取" class="headerlink" title="三、二维数组的创建与元素提取"></a>三、二维数组的创建与元素提取</h2><h3 id="1-二维数组（矩阵）的创建"><a href="#1-二维数组（矩阵）的创建" class="headerlink" title="1.二维数组（矩阵）的创建"></a>1.二维数组（矩阵）的创建</h3><ol>
+<li><p>直接输入法：</p>
+<p><strong>输入规则</strong>：1. 矩阵元素必须在方括号内2. 同行之间元素用逗号或空格隔开3. 行与行之间用分号或回车符号隔开 4. 矩阵的维数不必预先定义</p>
+</li>
+<li><p>利用函数创建特殊矩阵：</p>
+<p>​	</p>
+<table>
+<thead>
+<tr>
+<th>含义</th>
+<th>函数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>全1矩阵</td>
+<td>ones()</td>
+</tr>
+<tr>
+<td>全0矩阵</td>
+<td>zeros()</td>
+</tr>
+<tr>
+<td>(0,1)区间均匀分布的随机矩阵</td>
+<td>rand()</td>
+</tr>
+<tr>
+<td>单位矩阵</td>
+<td>eye()</td>
+</tr>
+<tr>
+<td>均值为0，方差为1的标准正态随机分布矩阵</td>
+<td>randn()</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+<h3 id="2-二维数组（矩阵）元素的提取"><a href="#2-二维数组（矩阵）元素的提取" class="headerlink" title="2.二维数组（矩阵）元素的提取"></a>2.二维数组（矩阵）元素的提取</h3><ol>
+<li>元素的提取：使用圆括号提取：A(i,j)</li>
+<li>子矩阵的提取：利用冒号和表达式获取：A(: , j)    A(i , :)    A(i:i+m , :)    A(i:i+m , k:k+n)</li>
+</ol>
+<h2 id="四、字符数组和空数组"><a href="#四、字符数组和空数组" class="headerlink" title="四、字符数组和空数组"></a>四、字符数组和空数组</h2><h3 id="1-字符数组"><a href="#1-字符数组" class="headerlink" title="1.字符数组"></a>1.字符数组</h3><ol>
+<li>字符数组的创建：必须使用单引号</li>
+<li>字符数组的拼接：使用方括号和逗号拼接  </li>
+<li>同样可以使用disp的命令来显示字符而不显示变量名</li>
+</ol>
+<h3 id="2-空数组"><a href="#2-空数组" class="headerlink" title="2.空数组"></a>2.空数组</h3><ol>
+<li>空数组的创建：a[]方括号里面什么都不用加</li>
+<li>注意区分空数组和全零数组</li>
+<li>可以使用命令isempty()来判断是否为空数组</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Matlab</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://pghglin.github.io/2022/12/21/Matlab%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2022/11/23/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">嵌入式Linux学习笔记</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Matlab%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">Matlab学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81Matlab%E7%9A%84%E5%8F%98%E9%87%8F"><span class="toc-number">1.1.</span> <span class="toc-text">一、Matlab的变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%89%B9%E6%AE%8A%E5%B8%B8%E9%87%8F"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.特殊常量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%8F%98%E9%87%8F%E7%9A%84%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.变量的命名规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8F%98%E9%87%8F%E6%98%BE%E7%A4%BA"><span class="toc-number">1.1.3.</span> <span class="toc-text">3.变量显示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%8F%98%E9%87%8F%E5%AD%98%E5%82%A8%E5%92%8C%E8%BD%BD%E5%85%A5"><span class="toc-number">1.1.4.</span> <span class="toc-text">4.变量存储和载入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%8F%98%E9%87%8F%E6%B8%85%E9%99%A4"><span class="toc-number">1.1.5.</span> <span class="toc-text">5.变量清除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E5%8F%98%E9%87%8F%E6%A3%80%E6%9F%A5"><span class="toc-number">1.1.6.</span> <span class="toc-text">6.变量检查</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E5%88%9B%E5%BB%BA%E4%B8%8E%E5%85%83%E7%B4%A0%E6%8F%90%E5%8F%96"><span class="toc-number">1.2.</span> <span class="toc-text">二、一维数组的创建与元素提取</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%EF%BC%88%E5%90%91%E9%87%8F%EF%BC%89%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.一维数组（向量）的创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84%EF%BC%88%E5%90%91%E9%87%8F%EF%BC%89%E7%9A%84%E6%8F%90%E5%8F%96"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.一维数组（向量）的提取</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E5%88%9B%E5%BB%BA%E4%B8%8E%E5%85%83%E7%B4%A0%E6%8F%90%E5%8F%96"><span class="toc-number">1.3.</span> <span class="toc-text">三、二维数组的创建与元素提取</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%EF%BC%88%E7%9F%A9%E9%98%B5%EF%BC%89%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.二维数组（矩阵）的创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%EF%BC%88%E7%9F%A9%E9%98%B5%EF%BC%89%E5%85%83%E7%B4%A0%E7%9A%84%E6%8F%90%E5%8F%96"><span class="toc-number">1.3.2.</span> <span class="toc-text">2.二维数组（矩阵）元素的提取</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84%E5%92%8C%E7%A9%BA%E6%95%B0%E7%BB%84"><span class="toc-number">1.4.</span> <span class="toc-text">四、字符数组和空数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84"><span class="toc-number">1.4.1.</span> <span class="toc-text">1.字符数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%A9%BA%E6%95%B0%E7%BB%84"><span class="toc-number">1.4.2.</span> <span class="toc-text">2.空数组</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -245,9 +476,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
