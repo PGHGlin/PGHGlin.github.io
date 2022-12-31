@@ -11,18 +11,18 @@
   <meta name="description" content="Matlab语言基础，最后更新于2022&#x2F;12&#x2F;31">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Matlab语言基础">
-<meta property="og:url" content="http://pghglin.github.io/2022/12/21/Matlab%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:url" content="http://pghglin.github.io/2022/12/31/Matlab%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Guanlin的博客">
 <meta property="og:description" content="Matlab语言基础，最后更新于2022&#x2F;12&#x2F;31">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://pghglin.github.io/2022/12/21/Matlab%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/1671439636335.png">
-<meta property="og:image" content="http://pghglin.github.io/2022/12/21/Matlab%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/1671440454059.png">
-<meta property="article:published_time" content="2022-12-21T13:03:39.000Z">
-<meta property="article:modified_time" content="2022-12-31T03:53:33.445Z">
+<meta property="og:image" content="http://pghglin.github.io/2022/12/31/Matlab%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/1671439636335.png">
+<meta property="og:image" content="http://pghglin.github.io/2022/12/31/Matlab%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/1671440454059.png">
+<meta property="article:published_time" content="2022-12-31T13:03:39.000Z">
+<meta property="article:modified_time" content="2022-12-31T03:55:20.479Z">
 <meta property="article:author" content="Huang">
 <meta property="article:tag" content="Matlab">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://pghglin.github.io/2022/12/21/Matlab%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/1671439636335.png">
+<meta name="twitter:image" content="http://pghglin.github.io/2022/12/31/Matlab%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/1671439636335.png">
   
     <link rel="alternative" href="/atom.xml" title="Guanlin的博客" type="application/atom+xml">
   
@@ -176,8 +176,8 @@
   
 
         
-        <a href="/2022/12/21/Matlab%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" class="archive-article-date">
-  	<time datetime="2022-12-21T13:03:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-21</time>
+        <a href="/2022/12/31/Matlab%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" class="archive-article-date">
+  	<time datetime="2022-12-31T13:03:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-12-31</time>
 </a>
         
             <!-- 添加代码 -->
@@ -230,7 +230,7 @@
 <p><strong>其次</strong>，需要注意和其他编程语言不同的是变量名开头必须是英文字母，变量名不能超过31个字符。</p>
 <p>变量不需要先定义后使用，和python一样。</p>
 <p>数值变量的类型会自动定义为双精度变量。</p>
-<h3 id="3-变量显示"><a href="#3-变量显示" class="headerlink" title="3.变量显示"></a>3.变量显示</h3><p><img src="/2022/12/21/Matlab%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/1671439636335.png" alt="1671439636335"></p>
+<h3 id="3-变量显示"><a href="#3-变量显示" class="headerlink" title="3.变量显示"></a>3.变量显示</h3><p><img src="/2022/12/31/Matlab%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/1671439636335.png" alt="1671439636335"></p>
 <p>直接输出情况下，会显示出变量名称，加上disp(display)命令后将不再显示变量名称，只显示数据。</p>
 <blockquote>
 <p>需要注意的是，Matlab中语句可加分号可不加，不加分号将直接显示计算结果，加上分号则不显示计算结果。</p>
@@ -247,7 +247,7 @@
 <p>格式：clear 变量名1 变量名2；</p>
 <p>​			clear all；</p>
 <p><em><strong>注意：</strong></em>clear是从内存中删除数据，而delete是从硬盘中删除数据。内存硬盘可以简单理解为内存是matlab软件上的临时空间，硬盘就是自己电脑上的存储空间了。</p>
-<h3 id="6-变量检查"><a href="#6-变量检查" class="headerlink" title="6.变量检查"></a>6.变量检查</h3><p><img src="/2022/12/21/Matlab%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/1671440454059.png" alt="1671440454059"></p>
+<h3 id="6-变量检查"><a href="#6-变量检查" class="headerlink" title="6.变量检查"></a>6.变量检查</h3><p><img src="/2022/12/31/Matlab%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/1671440454059.png" alt="1671440454059"></p>
 <p>可以使用who命令和whos命令。可以看到who命令展示内存中现在有的变量，而whos展示的是现在变量的详细信息。</p>
 <h2 id="二、一维数组的创建与元素提取"><a href="#二、一维数组的创建与元素提取" class="headerlink" title="二、一维数组的创建与元素提取"></a>二、一维数组的创建与元素提取</h2><h3 id="1-一维数组（向量）的创建"><a href="#1-一维数组（向量）的创建" class="headerlink" title="1.一维数组（向量）的创建"></a>1.一维数组（向量）的创建</h3><ol>
 <li><p>直接输入法：从键盘上直接输入元素，列与列之间用空格或逗号隔开，行与行之间用分号隔开</p>
@@ -596,7 +596,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://pghglin.github.io/2022/12/21/Matlab%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://pghglin.github.io/2022/12/31/Matlab%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -610,18 +610,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2022/12/23/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1%E4%B9%8B%E5%9B%9B%E4%BD%8D%E5%AF%86%E7%A0%81%E9%94%81/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          数字电路设计之四位密码锁
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/11/23/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">嵌入式Linux学习笔记</div>
+    <a href="/2022/12/23/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1%E4%B9%8B%E5%9B%9B%E4%BD%8D%E5%AF%86%E7%A0%81%E9%94%81/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数字电路设计之四位密码锁</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -790,11 +781,19 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">RTOS</a>
+                <a href="javascript:void(0)" class="js-tag color4">CAD</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CAD</a>
+                <a href="javascript:void(0)" class="js-tag color1">Clion</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">STM32</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">单片机</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -814,19 +813,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Matlab</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Clion</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">STM32</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">单片机</a>
+                <a href="javascript:void(0)" class="js-tag color5">RTOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -838,23 +825,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Matlab</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">PR</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">视频剪辑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">theme</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">tags</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -870,7 +849,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">theme</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">tags</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -879,6 +866,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">密码锁</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
